@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id='app'>
+        {{message}} -- {{obj.name}}
+        <button @click='clickme'>clickme</button>
+        <input v-on:keyup.enter="onPageDown">clickpagedown</input>
+        <span>{{clickPageDown}}</span>
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key='username'>
+        </template>
+        <template v-else>
+            <label
+            >Email</label>
+            <input placeholder="Enter your email address" key='Email'>
+        </template>
+
+        <div v-for='item in list'>
+            <span
+            :title="{'type':item.id}">
+            {{item.text}}
+            </span>
+        </div>
+    </div>
+    <script>
+        let obj = {
+            name:'hhhh'
+        }
+        Object.freeze(obj);
+        var app = new Vue({
+            el: '#app',
+            data: {
+                loginType:'',
+                message: 'Hello Vue!',
+                clickPageDown:'',
+                obj,
+                list:[
+                    {
+                        type:1,
+                        text:'11111'
+                    },
+                    {
+                        type:2,
+                        text:'222222'
+                    }
+                ]
+            },
+            methods:{
+                clickme(){
+                    if(this.loginType){
+                        this.loginType = ''
+                    } else {
+                        this.loginType = 'username';
+                    }
+                    this.message = 'click me',
+                    this.obj.name = 'aaaa';
+                },
+                onPageDown(){
+                    this.clickPageDown = 'click page down'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

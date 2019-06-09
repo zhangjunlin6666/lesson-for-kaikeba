@@ -1,0 +1,136 @@
+<template>
+    <node :list='data'></node>
+</template>
+
+<script>
+import node from './node';
+export default {
+    data() {
+        return {
+            data:[
+                {
+                    title:'语文',
+                    expanded:false,
+                    children:[
+                        {
+                            title:'第一章',
+                            expanded:false,
+                            children:[
+                                {
+                                    title:'第一节'
+                                },
+                                {
+                                    title:'第二节'
+                                },
+                                {
+                                    title:'第三节'
+                                }
+                            ]
+                        },
+                        {
+                            title:'第二章',
+                            expanded:true,
+                            children:[
+                                {
+                                    title:'第一节'
+                                },
+                                {
+                                    title:'第二节'
+                                },
+                                {
+                                    title:'第三节'
+                                },
+                                {
+                                    title:'第四节'
+                                },
+                                {
+                                    title:'第五节'
+                                }
+                            ]
+                        },
+                        {
+                            title:'第三章',
+                            expanded:false,
+                            children:[
+                                {
+                                    title:'第一节'
+                                },
+                                {
+                                    title:'第二节'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title:'数学',
+                    expanded:false,
+                    children:[
+                        {
+                            title:'第一章',
+                            expanded:true,
+                            children:[
+                                {
+                                    title:'第一节'
+                                },
+                                {
+                                    title:'第二节'
+                                },
+                                {
+                                    title:'第三节'
+                                },
+                                {
+                                    title:'第四节'
+                                },
+                                {
+                                    title:'第五节'
+                                }
+                            ]
+                        },
+                        {
+                            title:'第二章',
+                            expanded:false,
+                            children:[
+                                {
+                                    title:'第一节'
+                                },
+                                {
+                                    title:'第二节'
+                                }
+                            ]
+                        },
+                        {
+                            title:'第三章',
+                            expanded:true,
+                            children:[
+                                {
+                                    title:'第一节'
+                                },
+                                {
+                                    title:'第二节'
+                                },
+                                {
+                                    title:'第三节'
+                                },
+                                {
+                                    title:'第四节'
+                                },
+                                {
+                                    title:'第五节'
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    components:{
+        node
+    }
+}
+</script>
+
+<style>
+
+</style>
