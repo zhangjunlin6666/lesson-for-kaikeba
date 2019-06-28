@@ -9,7 +9,6 @@ export default {
         });
 
         let component = instance.$mount();
-        console.log(component);
         document.body.appendChild(component.$el);
         return {
             add (options) {

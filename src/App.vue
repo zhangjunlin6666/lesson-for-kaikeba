@@ -8,8 +8,13 @@
 			<button @click="saveMySon">爸爸来救你了，别担心</button>
 		</div>
 
+		<h2>第一个树形结构</h2>
 		<tree></tree>
-		<span>{{formModel.username}}{{formModel.password}}</span>
+
+		<h2>第二个树形结构</h2>
+		<node></node>
+
+		<h2>{{formModel.username}}{{formModel.password}}</h2>
 		<el-form ref='form' :model='formModel' :rules='rules'>
 			<el-form-item label='用户名：' prop='username'>
 				<el-input v-model='formModel.username'></el-input>
@@ -29,6 +34,7 @@
 <script>
 import son from './components/son/son';
 import tree from './components/tree/tree';
+import node from './components/node'
 import elForm from './components/form/elForm';
 import elFormItem from './components/form/elFormItem';
 import elInput from './components/form/elInput';
@@ -59,6 +65,7 @@ export default {
 	components:{
 		son,
 		tree,
+		node,
 		elForm,
 		elFormItem,
 		elInput
@@ -84,6 +91,10 @@ export default {
 			this.$store.commit('setCount');
 		},
 		clickMore(){
+			this.$toast({
+				content:'你确定要扔一个这么大的石头？',
+				duration:3000
+			}).show();
 			this.$store.dispatch('setCountMore', 8);
 		}
 	},
@@ -95,8 +106,6 @@ export default {
 			}
 		}
 		let obj1 = Object.create(null);
-		console.log(obj1);
-		console.log({});
 		this.$on('dispatch',(res) => {
 			this.sos = res;
 		})
