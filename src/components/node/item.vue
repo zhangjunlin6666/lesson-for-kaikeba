@@ -7,6 +7,15 @@
         <ul v-if='isFile && open'>
             <item v-for='(child,index) in model.children' :model='child' :key='index'></item>
         </ul>
+
+        <!-- 当跳转至子路由的时候不显示父级的内容   -->
+        <div>
+            我是父级中的内容
+        </div>
+
+        <router-view></router-view>
+
+
     </li>
 </template>
 
