@@ -2,7 +2,7 @@
  * @Author: jackson
  * @Date: 2019-05-30 11:31:19
  * @LastEditors: jackson
- * @LastEditTime: 2019-08-10 22:52:42
+ * @LastEditTime: 2019-08-11 22:54:04
  */
 import Vue from 'vue';
 import App from './App.vue';
@@ -72,7 +72,8 @@ let KRouter = new Krouter({
     }
   ]
 });
-
+console.log(router.match('/home')); // 相当于在组件中调用this.$route一样，返回的内容是一样的
+console.log(router.history);
 new Vue({
   router,
   store,

@@ -2,7 +2,7 @@
  * @Author: jackson
  * @Date: 2019-06-28 21:39:13
  * @LastEditors: jackson
- * @LastEditTime: 2019-08-10 11:14:49
+ * @LastEditTime: 2019-08-11 22:28:14
  */
 /**
  * 理解vue-router实现原理，需要做的事情
@@ -81,6 +81,7 @@ VueRouter.install = function (Vue) {
     //  混入
     Vue.mixin({
         beforeCreate () {
+            // console.log(this);
             // this是vue实例
             if (this.$options.KRouter) {
                 // 仅在根组件执行一次
